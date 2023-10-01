@@ -19,13 +19,17 @@ app.get('/news-categories', (req, res)=>{
 
 app.get('/category/:id', (req, res)=>{
     const id = req.params.id;
-    if( id === '8' ){
+    if( id === '0' ){
         res.send(news);
     }
     else{
         const category_news = news.filter( n => n.category_id === id );
         res.send(category_news);
     }
+})
+
+app.get('/news', (req, res)=>{
+    res.send(news);
 })
 
 app.get('/news/:id', (req, res)=>{
